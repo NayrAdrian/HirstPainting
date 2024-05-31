@@ -26,6 +26,7 @@ t_position = t.pos()
 
 x_axis = -250
 y_axis = -250
+t.speed("fastest")
 
 
 def draw_row():
@@ -34,6 +35,7 @@ def draw_row():
         global y_axis
         random_color = random.choice(color_list)
         t.penup()
+        t.hideturtle()
         t.dot(20, random_color)
         t.forward(50)
         y_axis += 5
@@ -42,6 +44,7 @@ def draw_row():
 for _ in range(10):
     t.teleport(x_axis, y_axis)
     draw_row()
+
 
 screen = Screen()
 screen.exitonclick()
